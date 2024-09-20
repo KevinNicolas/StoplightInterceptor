@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "QuickNav",
+  "description": "Navigate with a base url",
+  "version": "1.0",
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "vite.svg"
+  },
+  "permissions": ["scripting"],
+  "host_premissions": ["http://*/*", "https://*/*"]
+}

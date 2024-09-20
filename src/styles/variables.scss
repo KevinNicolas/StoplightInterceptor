@@ -1,0 +1,21 @@
+// *** COLORS ***
+
+// LIGHT
+$light-bg: #fafafa;
+$light-color: #333;
+
+:root {
+  --bg-color: #fafafa;
+  --font-color: #333;
+}
+
+// DARK
+$dark-bg: #222;
+$dark-color: #fafafa;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #222;
+    --font-color: #fafafa;
+  }
+}

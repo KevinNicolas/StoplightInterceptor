@@ -1,9 +1,13 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import { serviceWorkerTranspiler } from './vite-plugins'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    serviceWorkerTranspiler({ entryDir: './service-workers', outDir: 'service-worker' })
+  ],
   build: {
     outDir: "build",
     rollupOptions: {
@@ -12,5 +16,10 @@ export default defineConfig({
         options: "./options.html",
       },
     },
+    // lib: {
+    //   entry: './service-workers/*',
+    //   fileName: (_, filename) => `service-workers/${filename}.js`,
+    //   formats: ['cjs']
+    // },
   },
 });

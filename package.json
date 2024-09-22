@@ -1,5 +1,5 @@
 {
-  "name": "chrome-extension-template",
+  "name": "stoplight-interceptor",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -17,6 +17,7 @@
     "@types/chrome": "^0.0.271",
     "@types/node": "^22.5.5",
     "@vitejs/plugin-vue": "^5.1.2",
+    "esbuild": "^0.24.0",
     "sass": "^1.78.0",
     "typescript": "^5.5.3",
     "vite": "^5.4.1",

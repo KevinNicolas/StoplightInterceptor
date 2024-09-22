@@ -1,1 +1,1 @@
-{"root":["./src/main.ts","./src/vite-env.d.ts","./src/options/options.main.ts","./src/popup/popup.main.ts","./src/options/Options.vue","./src/popup/Popup.vue"],"version":"5.6.2"}
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/options/options.main.ts","./src/popup/popup.main.ts","./src/utils/chrome.util.ts","./src/options/options.vue","./src/popup/popup.vue"],"version":"5.6.2"}

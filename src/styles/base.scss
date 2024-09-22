@@ -3,7 +3,12 @@
 body {
   background-color: var(--bg-color);
   color: var(--font-color);
+  
+  span, p {
+    font-size: .875rem;
+  }
 }
+
 
 @media (prefers-color-scheme: dark) {
   body {

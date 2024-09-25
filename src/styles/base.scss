@@ -7,6 +7,25 @@ body {
   span, p {
     font-size: .875rem;
   }
+
+  button {
+    padding: .5rem 1rem;
+    border-radius: .256rem;
+    border: none;
+    transition: filter;
+    transition-duration: 300ms;
+    cursor: pointer;
+    
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &.primary {
+      font-weight: 500;
+      color: $primary-font;
+      background: $primary;
+    }
+  }
 }
 
 

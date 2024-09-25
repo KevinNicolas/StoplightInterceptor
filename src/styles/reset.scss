@@ -40,6 +40,11 @@ button,
 textarea,
 select {
   font: inherit;
+  outline: none;
+}
+
+input, select {
+  padding: .2rem .3rem;
 }
 
 h1, h2, h3, h4, h5, h6 {

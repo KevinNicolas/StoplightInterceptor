@@ -1,14 +1,4 @@
 <script setup lang="ts">
-  // https://jsonplaceholder.typicode.com/todos/1
-  // const url = 'https://jsonplaceholder.typicode.com/todos/1';
-  
-  // chrome.webRequest.onBeforeRequest.addListener(
-  //   function (detail) {
-  //     console.info({ detail });
-  //     return {};
-  //   },
-  //   { urls: ['*://jsonplaceholder.typicode.com/*'] }
-  // )
 </script>
 
 <template>

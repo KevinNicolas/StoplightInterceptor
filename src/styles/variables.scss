@@ -1,4 +1,6 @@
 // *** COLORS ***
+$primary: #44aa44;
+$primary-font: #fafafa;
 
 // LIGHT
 $light-bg: #fafafa;
@@ -7,6 +9,10 @@ $light-color: #333;
 :root {
   --bg-color: #fafafa;
   --font-color: #333;
+  
+  // Dark & Light
+  --primary: #44AA44;
+  --primary-font: #fafafa;
 }
 
 // DARK

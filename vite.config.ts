@@ -1,12 +1,17 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { serviceWorkerTranspiler } from './vite-plugins'
+import { getViteAliases, getEsbuildAliases } from './aliases.config'
 
+getEsbuildAliases();
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: getViteAliases(),
+  },
   plugins: [
     vue(),
-    serviceWorkerTranspiler({ entryDir: './service-workers', outDir: 'service-worker' })
+    serviceWorkerTranspiler({ serviceWorkerFile: './src/service-worker/serviceworker.ts' })
   ],
   build: {
     outDir: "build",
@@ -16,10 +21,5 @@ export default defineConfig({
         options: "./options.html",
       },
     },
-    // lib: {
-    //   entry: './service-workers/*',
-    //   fileName: (_, filename) => `service-workers/${filename}.js`,
-    //   formats: ['cjs']
-    // },
   },
 });

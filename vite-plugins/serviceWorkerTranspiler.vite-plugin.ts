@@ -1,31 +1,28 @@
 import { Plugin } from 'vite'
 import esbuild from 'esbuild'
 import path from "path";
-import fs from 'fs'
+import { getEsbuildAliases } from '../aliases.config';
+// import { aliasPath } from 'esbuild-plugin-alias-path'
 
 interface IPluginOptions {
-  entryDir: string;
-  outDir?: string;
+  serviceWorkerFile: string;
+  outfile?: string;
 }
 
-export function serviceWorkerTranspiler({ entryDir, outDir }: IPluginOptions): Plugin {
+export function serviceWorkerTranspiler({ serviceWorkerFile, outfile }: IPluginOptions): Plugin {
   
   return {
     name: "service-worker-transpiler",
     apply: 'build',
     enforce: 'post',
     async transformIndexHtml() {
-      const files = fs.readdirSync(path.join(process.cwd(), entryDir)).map((file) => {
-        const splittedFilename = file.split('.');
-        splittedFilename.pop();
-        return splittedFilename.join('.');
-      });
-
-      esbuild.buildSync({
+      const alias = await getEsbuildAliases();
+      await esbuild.build({
         minify: true,
         bundle: true,
-        entryPoints: files.map((file) => path.join(process.cwd(), entryDir, file)),
-        outdir: path.join(process.cwd(), 'build', outDir ?? 'service-workers'),
+        entryPoints: [path.join(process.cwd(), serviceWorkerFile)],
+        outfile: path.join(process.cwd(), outfile ?? 'build/serviceWorker.js'),
+        alias,
       })
     }
   }
